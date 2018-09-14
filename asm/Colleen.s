@@ -6,6 +6,7 @@ extern _printf
 section .text
 _main:
 ;commentaire fonction main
+push rbp
 mov rbp, rsp
 mov rcx, 0
 new_line:
@@ -22,7 +23,9 @@ mov rcx, 34
 lea r8, [rel txt]
 mov r9, 34
 xor rax, rax
+push r12
 call _printf
 mov rsp, rbp
+pop rbp
 ret
 ;commentaire hors fonction
